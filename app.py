@@ -46,7 +46,7 @@ def ingest(payload: PayloadAggregat):
     # 1) Upsert ke estimasi_harian
     kolom_map = {
         "Beji":"beji","Bojongsari":"bojongsari","Cilodong":"cilodong","Cimanggis":"cimanggis",
-        "Cinere":"cinere","Cipayung":"cipayung","Limo":"limo","Pancoran Mas":"pancoran mas",
+        "Cinere":"cinere","Cipayung":"cipayung","Limo":"limo","Pancoran Mas":"pancoran_mas",
         "Sawangan":"sawangan","Sukmajaya":"sukmajaya","Tapos":"tapos"
     }
 
@@ -135,3 +135,4 @@ def stats():
         row = cur.fetchone()
         cols = [d.name for d in cur.description]
         return {"data": dict(zip(cols, row))}
+
