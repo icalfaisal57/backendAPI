@@ -110,7 +110,7 @@ def latest():
 def history(limit: int = 30):
     sql = """
       SELECT tanggal, kota, rata_rata_kota, beji, bojongsari, cilodong, cimanggis, cinere,
-             cipayung, limo, "pancoran mas", sawangan, sukmajaya, tapos
+             cipayung, limo, pancoran_mas, sawangan, sukmajaya, tapos
       FROM estimasi_harian
       ORDER BY tanggal DESC
       LIMIT %s
@@ -135,4 +135,5 @@ def stats():
         row = cur.fetchone()
         cols = [d.name for d in cur.description]
         return {"data": dict(zip(cols, row))}
+
 
